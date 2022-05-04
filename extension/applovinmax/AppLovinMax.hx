@@ -12,7 +12,7 @@ class AppLovinMax {
 #end
 
 	private static var initialized:Bool = false;
-	public static var __init:AppLovinMax->String->Void = JNI.createStaticMethod("org/haxe/extension/applovinmax/AppLovinMaxEx", "init", "(Lorg/haxe/lime/HaxeObject;Ljava/lang/String;)V");
+	public static var __init:AppLovinMax->String->Array<String>->Void = JNI.createStaticMethod("org/haxe/extension/applovinmax/AppLovinMaxEx", "init", "(Lorg/haxe/lime/HaxeObject;Ljava/lang/String;[Ljava/lang/String;)V");
 	public static var __showRewarded:Void->Void = JNI.createStaticMethod("org/haxe/extension/applovinmax/AppLovinMaxEx", "showRewarded", "()V");
 	private static var completeCB:Void->Void;
 	private static var skipCB:Void->Void;
@@ -24,12 +24,12 @@ class AppLovinMax {
 
 
 
-	public static function init(appkey:String) {
+	public static function init(appkey:String, testDeviceIds:Array<String>) {
 		if (initialized) return;
 		initialized = true;
 #if android
 		try {
-			__init(instance, appkey);
+			__init(instance, appkey, testDeviceIds);
 		} catch(e:Dynamic) {
 			trace("AppLovinMax REWARDED Error: "+e);
 		}

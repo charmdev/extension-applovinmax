@@ -38,13 +38,16 @@ public class AppLovinMaxEx extends Extension
 	protected static String _appkey;
 
 
-	public static void init(HaxeObject callback, String appkey) {
+	public static void init(HaxeObject callback, String appkey, String[] testDeviceIds) {
 		_callback = callback;
 		_appkey = appkey;
 
-		AppLovinSdk.getInstance(Extension.mainActivity).setMediationProvider("max");
+		Log.d(TAG, testDeviceIds[0]);
 
-AppLovinSdk.getInstance(Extension.mainActivity).getSettings().setTestDeviceAdvertisingIds(Arrays.asList("afd469cb-595e-4cf6-b2d1-10ca1ad1abe1"));
+		AppLovinSdk.getInstance(Extension.mainActivity).setMediationProvider("max");
+		
+		if (testDeviceIds != null)
+			AppLovinSdk.getInstance(Extension.mainActivity).getSettings().setTestDeviceAdvertisingIds(Arrays.asList(testDeviceIds));
 
 		AppLovinSdk.initializeSdk(Extension.mainActivity, new AppLovinSdk.SdkInitializationListener() {
 			@Override
