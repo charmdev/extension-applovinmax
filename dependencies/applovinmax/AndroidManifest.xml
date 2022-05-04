@@ -15,7 +15,7 @@
 
 		<meta-data
 			android:name="applovin.sdk.key"
-			android:value="tbhmkCGmQXWfaSPa7n82v74wHyEh7ee-EKlzX0iyXEb7h0hpnrsfywZEtpx-RZzgvidRiLNEZ-MF-23muvPrp-" />
+			android:value="::ENV_APPLOVIN_SDK_KEY::" />
 
 	</application>
 </manifest>
