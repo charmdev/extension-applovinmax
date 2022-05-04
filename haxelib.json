@@ -1,0 +1,13 @@
+{
+	"name": "extension-applovinmax",
+	"url": "https://github.com/charmdev/extension-applovinmax",
+	"license": "MIT",
+	"tags": ["openfl", "ads", "android", "iOS"],
+	"description": "AppLovinMax (ads) extension (Android + iOS).",
+	"version": "1.0.0",
+	"dependencies": {
+		"extension-android-support-v4": ""
+	},
+	"contributors": ["charmdev"],
+	"releasenote": "Add warning if you forgot to set google play services version."
+}

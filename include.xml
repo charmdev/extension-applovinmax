@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<section if="android">
+		<section unless="openfl-legacy || openfl-next">
+			<echo value="ALERT: Setting Android Support Library to the last version on your SDK. Please read how to upgrade and choose your version here: https://github.com/player-03/google-play-services" unless="supportLibraryVersion" />
+			<set name="supportLibraryVersion" value="+" unless="supportLibraryVersion" />
+		</section>
+		<section if="openfl-legacy || openfl-next">
+			<haxelib name="extension-android-support-v4" />
+		</section>
+		<dependency name="applovinmax" path="dependencies/applovinmax" />
+	</section>
+	<section if="ios">
+		<ios deployment="9.0"/> 
+		<ndll name="applovinmaxex" />
+		<dependency path="frameworks/IronSource.framework" />
+
+		<dependency path="frameworks/AdColony.framework" />
+		<dependency path="frameworks/ISAdColonyAdapter.framework" />
+
+		<dependency path="frameworks/AppLovinSDK.framework" />
+		<dependency path="frameworks/ISAppLovinAdapter.framework" />
+
+		<dependency path="frameworks/VungleSDK.framework" />
+		<dependency path="frameworks/ISVungleAdapter.framework" />
+
+		<dependency path="frameworks/ISUnityAdsAdapter.framework" />
+		<dependency path="frameworks/ISFacebookAdapter.framework"/>
+		<dependency path="frameworks/ISAdMobAdapter.framework" />
+
+		<dependency path="frameworks/FBAudienceNetwork.framework" />
+		<dependency path="frameworks/GoogleMobileAds.framework" />
+		<dependency path="frameworks/UnityAds.framework" />
+		
+
+	</section>
+
+</project>

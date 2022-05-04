@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+	sourceSets {
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src']
+			res.srcDirs = ['res']
+		}
+	}
+	compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+	buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+}
+
+dependencies {
+	
+	compile project(':deps:extension-api')
+
+	implementation "com.applovin:applovin-sdk:${rootProject.ext.applovinmaxSdk}"
+
+	implementation "com.ironsource.sdk:mediationsdk:${rootProject.ext.applovinmax_ironsource_sdk}"
+	implementation "com.google.android.gms:play-services-ads:${rootProject.ext.applovinmax_admob_sdk}"
+	implementation "com.facebook.android:audience-network-sdk:${rootProject.ext.applovinmax_facebook_sdk}"
+	implementation "com.unity3d.ads:unity-ads:${rootProject.ext.applovinmax_unityads_sdk}"
+	implementation "com.fyber:offerwall-sdk:${rootProject.ext.applovinmax_fyber_sdk}"
+	
+	implementation "com.applovin.mediation:mintegral-adapter:${rootProject.ext.applovinmax_mintegral_adapter}"
+	implementation "com.applovin.mediation:fyber-adapter:${rootProject.ext.applovinmax_fyber_adapter}"
+	implementation "com.applovin.mediation:ironsource-adapter:${rootProject.ext.applovinmax_ironsource_adapter}"
+	implementation "com.applovin.mediation:google-adapter:${rootProject.ext.applovinmax_admob_adapter}"
+	implementation "com.applovin.mediation:facebook-adapter:${rootProject.ext.applovinmax_facebook_adapter}"
+	implementation "com.applovin.mediation:unityads-adapter:${rootProject.ext.applovinmax_unityads_adapter}"
+	
+}
