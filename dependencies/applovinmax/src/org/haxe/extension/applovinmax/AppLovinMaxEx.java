@@ -54,6 +54,8 @@ public class AppLovinMaxEx extends Extension
 			public void onSdkInitialized(final AppLovinSdkConfiguration configuration)
 			{
 				AppLovinMaxEx.initMAX();
+				
+				AppLovinSdk.getInstance(Extension.mainActivity).showMediationDebugger();
 			}
 		});
 	}
