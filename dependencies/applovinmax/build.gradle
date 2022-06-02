@@ -23,7 +23,8 @@ dependencies {
 	implementation "com.facebook.android:audience-network-sdk:${rootProject.ext.applovinmax_facebook_sdk}"
 	implementation "com.unity3d.ads:unity-ads:${rootProject.ext.applovinmax_unityads_sdk}"
 	implementation "com.fyber:offerwall-sdk:${rootProject.ext.applovinmax_fyber_sdk}"
-	
+	implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 	implementation "com.applovin.mediation:mintegral-adapter:${rootProject.ext.applovinmax_mintegral_adapter}"
 	implementation "com.applovin.mediation:fyber-adapter:${rootProject.ext.applovinmax_fyber_adapter}"
 	implementation "com.applovin.mediation:ironsource-adapter:${rootProject.ext.applovinmax_ironsource_adapter}"
