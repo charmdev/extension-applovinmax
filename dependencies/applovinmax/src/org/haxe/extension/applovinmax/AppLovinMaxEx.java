@@ -42,8 +42,6 @@ public class AppLovinMaxEx extends Extension
 		_callback = callback;
 		_appkey = appkey;
 
-		Log.d(TAG, testDeviceIds[0]);
-
 		AppLovinSdk.getInstance(Extension.mainActivity).setMediationProvider("max");
 		
 		if (testDeviceIds != null)
