@@ -53,7 +53,7 @@ public class AppLovinMaxEx extends Extension
 			{
 				AppLovinMaxEx.initMAX();
 				
-				//AppLovinSdk.getInstance(Extension.mainActivity).showMediationDebugger();
+				AppLovinSdk.getInstance(Extension.mainActivity).showMediationDebugger();
 			}
 		});
 	}
