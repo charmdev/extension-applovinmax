@@ -6,7 +6,7 @@ import org.haxe.extension.Extension;
 import org.haxe.lime.HaxeObject;
 import android.opengl.GLSurfaceView;
 import java.util.Arrays;
-
+import android.net.Uri;
 
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxAdRevenueListener;
@@ -18,8 +18,8 @@ import com.applovin.mediation.ads.MaxRewardedAd;
 import com.applovin.sdk.AppLovinSdkConfiguration;
 import com.applovin.sdk.AppLovinMediationProvider;
 import com.applovin.sdk.AppLovinSdk;
-
-
+import com.applovin.sdk.AppLovinCmpService;
+import com.applovin.sdk.AppLovinCmpError;
 
 
 public class AppLovinMaxEx extends Extension
@@ -36,16 +36,21 @@ public class AppLovinMaxEx extends Extension
 	protected static MaxRewardedAd rewardedAd;
 	
 	protected static String _appkey;
+	protected static String _policy;
 
 
-	public static void init(HaxeObject callback, String appkey, String[] testDeviceIds) {
+	public static void init(HaxeObject callback, String appkey, String[] testDeviceIds, String policy) {
 		_callback = callback;
 		_appkey = appkey;
+		_policy = policy;
 
 		AppLovinSdk.getInstance(Extension.mainActivity).setMediationProvider("max");
 		
 		if (testDeviceIds != null)
 			AppLovinSdk.getInstance(Extension.mainActivity).getSettings().setTestDeviceAdvertisingIds(Arrays.asList(testDeviceIds));
+
+		AppLovinSdk.getInstance(Extension.mainActivity).getSettings().getTermsAndPrivacyPolicyFlowSettings().setEnabled(true);
+		AppLovinSdk.getInstance(Extension.mainActivity).getSettings().getTermsAndPrivacyPolicyFlowSettings().setPrivacyPolicyUri( Uri.parse(_policy) );
 
 		AppLovinSdk.initializeSdk(Extension.mainActivity, new AppLovinSdk.SdkInitializationListener() {
 			@Override

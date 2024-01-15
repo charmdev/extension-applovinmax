@@ -31,5 +31,7 @@ dependencies {
 	implementation "com.applovin.mediation:google-adapter:${rootProject.ext.applovinmax_admob_adapter}"
 	implementation "com.applovin.mediation:facebook-adapter:${rootProject.ext.applovinmax_facebook_adapter}"
 	implementation "com.applovin.mediation:unityads-adapter:${rootProject.ext.applovinmax_unityads_adapter}"
+
+	implementation 'com.google.android.ump:user-messaging-platform:2.1.0'
 	
 }
